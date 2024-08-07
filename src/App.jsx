@@ -52,7 +52,6 @@ function App() {
   }, [query, page]);
 
 
-
   const handleSearch = (value) => {
     setQuery(value);
     setImages([]);
@@ -73,10 +72,8 @@ function App() {
 
   }
 
-
   const CloseModal = () => {
     setIsShowModal(false)
-
   }
 
   return (
@@ -94,7 +91,6 @@ function App() {
         onRequestClose={CloseModal}
         urls={urlsModal}
         alt_description={altModal}
-
       ></ImageModal>
 
     </>

@@ -30,12 +30,13 @@ function App() {
     if (!query) {
       return
     }
+
     const fetchImages = async () => {
       setLoading(true);
       setError(null);
       try {
         const { results, total_pages } = await fetchImagesGallery(query, page);
-        console.log(results)
+        // console.log(results)
         if (!results.length) {
           return setIsEmpty(true);
         }
@@ -82,7 +83,7 @@ function App() {
       {images.length > 0 && <ImageGallery images={images}
         openModal={OpenModal} />}
       {showBtn && <LoadMoreBtn onClick={onLoadmoreBtn} disabled={loading}>{loading ? "Loading..." : "Load more"}</LoadMoreBtn>}
-      {!images.length && !isEmpty && (<ErrorMessage>Let`s begin search!</ErrorMessage>)}
+      {!loading && !images.length && !isEmpty && (<ErrorMessage>Let`s begin search!</ErrorMessage>)}
       {isEmpty && (<ErrorMessage>Sorry.There are no images...😒</ErrorMessage>)}
       {loading && <Loader />}
       {error && <ErrorMessage>Whoops, something went wrong! Please try reloading this page!</ErrorMessage>}

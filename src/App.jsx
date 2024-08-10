@@ -4,7 +4,7 @@ import './App.css'
 import SearchBar from "./components/SearchBar/SearchBar";
 import Loader from "./components/Loader/Loader";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
-import ImageGallery from "./ImageGallery/ImageGallery";
+import ImageGallery from "./components/ImageGallery/ImageGallery";
 
 import { fetchImagesGallery } from "./components/images-api";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
